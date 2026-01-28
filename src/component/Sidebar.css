@@ -1,0 +1,57 @@
+/* Base Sidebar */
+.sidebar {
+  width: 220px;
+  background: lightgray;
+  padding: 20px;
+  height: calc(100vh - 60px);
+  box-shadow: 2px 0 4px rgba(14, 38, 173, 0.46);
+  transition: transform 0.3s ease-in-out;
+}
+
+/* List */
+.sidebar-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Toggle Button (hidden on desktop) */
+.sidebar-toggle {
+  display: none;
+  background: #0f4a8d;
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+  .sidebar {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    height: calc(100vh - 60px);
+    transform: translateX(-100%);
+    z-index: 1000;
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+
+  .sidebar-toggle {
+    display: block;
+  }
+}
+
+/* ================= TABLET ================= */
+@media (min-width: 769px) and (max-width: 1023px) {
+  .sidebar {
+    width: 180px;
+  }
+}

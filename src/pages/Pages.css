@@ -1,0 +1,60 @@
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 3px;
+  gap: 5px;
+
+}
+
+.product-form {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* ✅ 3 fields per row */
+  gap: 15px;
+  max-width: 800px;
+  width: 100%;
+    margin: 20px;
+    column-gap: 25px;   /* ⬅ horizontal space */
+  row-gap: 25px; 
+}
+
+/* Inputs + Select */
+.product-form input,
+.product-form select {
+  width: 100%;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+/* Make full-width fields */
+.full-width {
+  grid-column: span 3; /* take entire row */
+}
+
+/* Button at bottom */
+.product-form button {
+  grid-column: span 3;
+  padding: 12px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.product-form button:hover {
+  background: #0056b3;
+}
+
+/* ✅ Responsive (Mobile) */
+@media (max-width: 768px) {
+  .product-form {
+    grid-template-columns: 1fr;
+  }
+
+  .full-width,
+  .product-form button {
+    grid-column: span 1;
+  }
+}
